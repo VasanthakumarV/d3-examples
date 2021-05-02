@@ -9,3 +9,8 @@ extern "C" {
 extern "C" {
     pub fn demo2();
 }
+
+#[wasm_bindgen(module = "/src/js/demo3.js")]
+extern "C" {
+    pub fn demo3();
+}
