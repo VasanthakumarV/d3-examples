@@ -19,6 +19,7 @@ fn update(msg: Msg, _model: &mut Model, orders: &mut impl Orders<Msg>) {
             bindings::demo1();
             bindings::demo2();
             bindings::demo3();
+            bindings::demo4();
             orders.after_next_render(|_| Msg::Render).skip();
         }
     }
@@ -36,7 +37,7 @@ fn view(_model: &Model) -> Node<Msg> {
                 attrs! {
                     At::Width => 600,
                     At::Height => 300,
-                }
+                },
             ],
         ],
         div![
@@ -49,7 +50,7 @@ fn view(_model: &Model) -> Node<Msg> {
                 attrs! {
                     At::Width => 600,
                     At::Height => 300,
-                }
+                },
             ],
         ],
         div![
@@ -62,7 +63,16 @@ fn view(_model: &Model) -> Node<Msg> {
                 attrs! {
                     At::Width => 600,
                     At::Height => 300,
-                }
+                },
+            ],
+        ],
+        div![
+            md!(format!("```js\n{}\n```", include_str!("./js/demo4.js")).as_str()),
+            div![
+                style! {
+                    St::BackgroundColor => "lightgrey",
+                },
+                id!["demo4"],
             ],
         ],
     ]
