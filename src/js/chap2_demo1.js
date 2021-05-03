@@ -1,4 +1,4 @@
-export function demo1() {
+export function chap2_demo1() {
   var data = d3.csvParse(`x,y
 100,50
 200,100
@@ -6,7 +6,7 @@ export function demo1() {
 400,200
 500,250`);
 
-  d3.select("#demo1")
+  d3.select("#chap2-demo1")
     .selectAll("circle")
     .data(data)
     .enter()

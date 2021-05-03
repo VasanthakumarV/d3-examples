@@ -1,21 +1,26 @@
 use wasm_bindgen::prelude::*;
 
-#[wasm_bindgen(module = "/src/js/demo1.js")]
+#[wasm_bindgen(module = "/src/js/chap2_demo1.js")]
 extern "C" {
-    pub fn demo1();
+    pub fn chap2_demo1();
 }
 
-#[wasm_bindgen(module = "/src/js/demo2.js")]
+#[wasm_bindgen(module = "/src/js/chap2_demo2.js")]
 extern "C" {
-    pub fn demo2();
+    pub fn chap2_demo2();
 }
 
-#[wasm_bindgen(module = "/src/js/demo3.js")]
+#[wasm_bindgen(module = "/src/js/chap2_demo3.js")]
 extern "C" {
-    pub fn demo3();
+    pub fn chap2_demo3();
 }
 
-#[wasm_bindgen(module = "/src/js/demo4.js")]
+#[wasm_bindgen(module = "/src/js/chap2_demo4.js")]
 extern "C" {
-    pub fn demo4();
+    pub fn chap2_demo4();
+}
+
+#[wasm_bindgen(module = "/src/js/chap3_demo1.js")]
+extern "C" {
+    pub fn chap3_demo1();
 }

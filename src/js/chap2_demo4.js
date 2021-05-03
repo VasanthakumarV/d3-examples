@@ -1,7 +1,7 @@
-export function demo4() {
+export function chap2_demo4() {
   var vs = ["from east", "to west", "at home", "is best"];
 
-  d3.select("#demo4")
+  d3.select("#chap2-demo4")
     .append("ul")
     .selectAll("li")
     .data(vs)

@@ -1,4 +1,4 @@
-export function demo2() {
+export function chap2_demo2() {
   var data = d3.csvParse(`x,y1,y2
 1.0,0.001,0.63
 3.0,0.003,0.84
@@ -25,7 +25,7 @@ export function demo2() {
     .domain(d3.extent(data, d => d["y2"]))
     .range([pxY, 0]);
 
-  d3.select("#demo2")
+  d3.select("#chap2-demo2")
     .append("g")
     .attr("id", "ds1")
     .attr("fill", "green")

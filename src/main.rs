@@ -16,10 +16,11 @@ enum Msg {
 fn update(msg: Msg, _model: &mut Model, orders: &mut impl Orders<Msg>) {
     match msg {
         Msg::Render => {
-            bindings::demo1();
-            bindings::demo2();
-            bindings::demo3();
-            bindings::demo4();
+            bindings::chap2_demo1();
+            bindings::chap2_demo2();
+            bindings::chap2_demo3();
+            bindings::chap2_demo4();
+            bindings::chap3_demo1();
             orders.after_next_render(|_| Msg::Render).skip();
         }
     }
@@ -28,12 +29,12 @@ fn update(msg: Msg, _model: &mut Model, orders: &mut impl Orders<Msg>) {
 fn view(_model: &Model) -> Node<Msg> {
     div![
         div![
-            md!(format!("```js\n{}\n```", include_str!("./js/demo1.js")).as_str()),
+            md!(format!("```js\n{}\n```", include_str!("./js/chap2_demo1.js")).as_str()),
             svg![
                 style! {
                     St::BackgroundColor => "lightgrey",
                 },
-                id!["demo1"],
+                id!["chap2-demo1"],
                 attrs! {
                     At::Width => 600,
                     At::Height => 300,
@@ -41,12 +42,12 @@ fn view(_model: &Model) -> Node<Msg> {
             ],
         ],
         div![
-            md!(format!("```js\n{}\n```", include_str!("./js/demo2.js")).as_str()),
+            md!(format!("```js\n{}\n```", include_str!("./js/chap2_demo2.js")).as_str()),
             svg![
                 style! {
                     St::BackgroundColor => "lightgrey",
                 },
-                id!["demo2"],
+                id!["chap2-demo2"],
                 attrs! {
                     At::Width => 600,
                     At::Height => 300,
@@ -54,12 +55,12 @@ fn view(_model: &Model) -> Node<Msg> {
             ],
         ],
         div![
-            md!(format!("```js\n{}\n```", include_str!("./js/demo3.js")).as_str()),
+            md!(format!("```js\n{}\n```", include_str!("./js/chap2_demo3.js")).as_str()),
             svg![
                 style! {
                     St::BackgroundColor => "lightgrey",
                 },
-                id!["demo3"],
+                id!["chap2-demo3"],
                 attrs! {
                     At::Width => 600,
                     At::Height => 300,
@@ -67,12 +68,25 @@ fn view(_model: &Model) -> Node<Msg> {
             ],
         ],
         div![
-            md!(format!("```js\n{}\n```", include_str!("./js/demo4.js")).as_str()),
+            md!(format!("```js\n{}\n```", include_str!("./js/chap2_demo4.js")).as_str()),
             div![
                 style! {
                     St::BackgroundColor => "lightgrey",
                 },
-                id!["demo4"],
+                id!["chap2-demo4"],
+            ],
+        ],
+        div![
+            md!(format!("```js\n{}\n```", include_str!("./js/chap3_demo1.js")).as_str()),
+            svg![
+                style! {
+                    St::BackgroundColor => "lightgrey",
+                },
+                id!["chap3-demo1"],
+                attrs! {
+                    At::Width => 300,
+                    At::Height => 150,
+                },
             ],
         ],
     ]

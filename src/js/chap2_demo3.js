@@ -1,4 +1,4 @@
-export function demo3() {
+export function chap2_demo3() {
   var data = d3.csvParse(`x,y1,y2
 1.0,0.001,0.63
 3.0,0.003,0.84
@@ -10,7 +10,7 @@ export function demo3() {
 8.0,0.198,0.71
 9.0,0.199,0.65`);
 
-  var svg = d3.select("#demo3");
+  var svg = d3.select("#chap2-demo3");
 
   // Extracting shape attributes
   var pxX = svg.attr("width");
