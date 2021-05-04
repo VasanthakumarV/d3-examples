@@ -4,6 +4,7 @@ mod bindings;
 
 fn init(_: Url, orders: &mut impl Orders<Msg>) -> Model {
     orders.after_next_render(|_| Msg::Render);
+
     Model {}
 }
 
@@ -21,6 +22,8 @@ fn update(msg: Msg, _model: &mut Model, orders: &mut impl Orders<Msg>) {
             bindings::chap2_demo3();
             bindings::chap2_demo4();
             bindings::chap3_demo1();
+            bindings::chap3_demo2();
+
             orders.after_next_render(|_| Msg::Render).skip();
         }
     }
@@ -83,6 +86,19 @@ fn view(_model: &Model) -> Node<Msg> {
                     St::BackgroundColor => "lightgrey",
                 },
                 id!["chap3-demo1"],
+                attrs! {
+                    At::Width => 300,
+                    At::Height => 150,
+                },
+            ],
+        ],
+        div![
+            md!(format!("```js\n{}\n```", include_str!("./js/chap3_demo2.js")).as_str()),
+            svg![
+                style! {
+                    St::BackgroundColor => "lightgrey",
+                },
+                id!["chap3-demo2"],
                 attrs! {
                     At::Width => 300,
                     At::Height => 150,
