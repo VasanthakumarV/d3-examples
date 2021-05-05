@@ -108,9 +108,10 @@ fn view(model: &Model) -> Vec<Node<Msg>> {
         br![],
         div![
             style! {
-                St::Display => "flex",
-                St::FlexDirection => "column-reverse",
-                St::AlignItems => "center",
+                St::Height => "90vh",
+                St::Display => "grid",
+                St::GridTemplateRows => "min-content auto",
+                St::JustifyContent => "center",
             },
             match model.demo {
                 Demo::Chap2Demo1 => view_chap2_demo1(),
@@ -127,66 +128,66 @@ fn view(model: &Model) -> Vec<Node<Msg>> {
 
 fn view_chap2_demo1() -> Vec<Node<Msg>> {
     nodes![
-        div![
-            style! {
-                St::Height => "50vh",
-                St::Overflow => "scroll",
-            },
-            md!(format!("```js\n{}\n```", include_str!("./js/chap2_demo1.js")).as_str()),
-        ]
         svg![
             id!["chap2-demo1"],
             style! {
                 St::BackgroundColor => "lightgrey",
+                St::Margin => "auto",
             },
             attrs! {
                 At::Width => 600,
                 At::Height => 300,
             },
+        ],
+        div![
+            style! {
+                St::Overflow => "scroll",
+            },
+            md!(format!("```js\n{}\n```", include_str!("./js/chap2_demo1.js")).as_str()),
         ],
     ]
 }
 
 fn view_chap2_demo2() -> Vec<Node<Msg>> {
     nodes![
-        div![
-            style! {
-                St::Height => "50vh",
-                St::Overflow => "scroll",
-            },
-            md!(format!("```js\n{}\n```", include_str!("./js/chap2_demo2.js")).as_str()),
-        ]
         svg![
             id!["chap2-demo2"],
             style! {
                 St::BackgroundColor => "lightgrey",
+                St::Margin => "auto",
             },
             attrs! {
                 At::Width => 600,
                 At::Height => 300,
             },
         ],
+        div![
+            style! {
+                St::Overflow => "scroll",
+            },
+            md!(format!("```js\n{}\n```", include_str!("./js/chap2_demo2.js")).as_str()),
+        ],
     ]
 }
 
 fn view_chap2_demo3() -> Vec<Node<Msg>> {
     nodes![
-        div![
-            style! {
-                St::Height => "50vh",
-                St::Overflow => "scroll",
-            },
-            md!(format!("```js\n{}\n```", include_str!("./js/chap2_demo3.js")).as_str()),
-        ]
         svg![
             id!["chap2-demo3"],
             style! {
                 St::BackgroundColor => "lightgrey",
+                St::Margin => "auto",
             },
             attrs! {
                 At::Width => 600,
                 At::Height => 300,
             },
+        ],
+        div![
+            style! {
+                St::Overflow => "scroll",
+            },
+            md!(format!("```js\n{}\n```", include_str!("./js/chap2_demo3.js")).as_str()),
         ],
     ]
 }
@@ -194,83 +195,83 @@ fn view_chap2_demo3() -> Vec<Node<Msg>> {
 fn view_chap2_demo4() -> Vec<Node<Msg>> {
     nodes![
         div![
-            style! {
-                St::Height => "50vh",
-                St::Overflow => "scroll",
-            },
-            md!(format!("```js\n{}\n```", include_str!("./js/chap2_demo4.js")).as_str()),
-        ],
-        div![
             id!["chap2-demo4"],
             style! {
                 St::BackgroundColor => "lightgrey",
                 St::Width => 200,
                 St::Height => 200,
+                St::Margin => "auto",
             },
+        ],
+        div![
+            style! {
+                St::Overflow => "scroll",
+            },
+            md!(format!("```js\n{}\n```", include_str!("./js/chap2_demo4.js")).as_str()),
         ],
     ]
 }
 
 fn view_chap3_demo1() -> Vec<Node<Msg>> {
     nodes![
-        div![
-            style! {
-                St::Height => "50vh",
-                St::Overflow => "scroll",
-            },
-            md!(format!("```js\n{}\n```", include_str!("./js/chap3_demo1.js")).as_str()),
-        ],
         svg![
             id!["chap3-demo1"],
             style! {
                 St::BackgroundColor => "lightgrey",
+                St::Margin => "auto",
             },
             attrs! {
                 At::Width => 300,
                 At::Height => 150,
             },
+        ],
+        div![
+            style! {
+                St::Overflow => "scroll",
+            },
+            md!(format!("```js\n{}\n```", include_str!("./js/chap3_demo1.js")).as_str()),
         ],
     ]
 }
 
 fn view_chap3_demo2() -> Vec<Node<Msg>> {
     nodes![
-        div![
-            style! {
-                St::Height => "50vh",
-                St::Overflow => "scroll",
-            },
-            md!(format!("```js\n{}\n```", include_str!("./js/chap3_demo2.js")).as_str()),
-        ],
         svg![
             id!["chap3-demo2"],
             style! {
                 St::BackgroundColor => "lightgrey",
+                St::Margin => "auto",
             },
             attrs! {
                 At::Width => 300,
                 At::Height => 150,
             },
         ],
+        div![
+            style! {
+                St::Overflow => "scroll",
+            },
+            md!(format!("```js\n{}\n```", include_str!("./js/chap3_demo2.js")).as_str()),
+        ],
     ]
 }
 
 fn view_chap3_demo3() -> Vec<Node<Msg>> {
     nodes![
-        div![
-            style! {
-                St::Height => "50vh",
-                St::Overflow => "scroll",
-            },
-            md!(format!("```js\n{}\n```", include_str!("./js/chap3_demo3.js")).as_str()),
-        ],
         ul![
             id!["chap3-demo3"],
             style! {
                 St::BackgroundColor => "lightgrey",
                 St::Width => 300,
                 St::Height => 100,
+                St::Margin => "auto",
             },
+        ],
+        div![
+            style! {
+                St::Overflow => "scroll",
+            },
+            md!(format!("```js\n{}\n```", include_str!("./js/chap3_demo3.js")).as_str()),
         ],
     ]
 }
