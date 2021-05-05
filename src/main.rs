@@ -22,6 +22,7 @@ enum Demo {
     Chap2Demo4,
     Chap3Demo1,
     Chap3Demo2,
+    Chap3Demo3,
 }
 
 impl std::fmt::Display for Demo {
@@ -33,6 +34,7 @@ impl std::fmt::Display for Demo {
             Demo::Chap2Demo4 => write!(f, "Chapter 2, Demo 4"),
             Demo::Chap3Demo1 => write!(f, "Chapter 3, Demo 1"),
             Demo::Chap3Demo2 => write!(f, "Chapter 3, Demo 2"),
+            Demo::Chap3Demo3 => write!(f, "Chapter 3, Demo 3"),
         }
     }
 }
@@ -57,6 +59,7 @@ fn update(msg: Msg, model: &mut Model, orders: &mut impl Orders<Msg>) {
             Demo::Chap2Demo4 => bindings::chap2_demo4(),
             Demo::Chap3Demo1 => bindings::chap3_demo1(),
             Demo::Chap3Demo2 => bindings::chap3_demo2(),
+            Demo::Chap3Demo3 => bindings::chap3_demo3(),
         },
         Msg::Select(demo) => {
             orders.after_next_render(|_| Msg::Render);
@@ -68,6 +71,11 @@ fn update(msg: Msg, model: &mut Model, orders: &mut impl Orders<Msg>) {
 fn view(model: &Model) -> Vec<Node<Msg>> {
     vec![
         select![
+            style! {
+                St::Display => "block",
+                St::Width => "50%",
+                St::Margin => "auto",
+            },
             option![
                 Demo::Chap2Demo1.to_string(),
                 ev(Ev::Click, |_| Msg::Select(Demo::Chap2Demo1))
@@ -92,11 +100,16 @@ fn view(model: &Model) -> Vec<Node<Msg>> {
                 Demo::Chap3Demo2.to_string(),
                 ev(Ev::Click, |_| Msg::Select(Demo::Chap3Demo2))
             ],
+            option![
+                Demo::Chap3Demo3.to_string(),
+                ev(Ev::Click, |_| Msg::Select(Demo::Chap3Demo3))
+            ],
         ],
+        br![],
         div![
             style! {
                 St::Display => "grid",
-                St::GridTemplateColumns => "auto auto",
+                St::GridTemplateColumns => "repeat(2, auto)",
                 St::Gap => "16px",
                 St::JustifyContent => "center",
             },
@@ -107,6 +120,7 @@ fn view(model: &Model) -> Vec<Node<Msg>> {
                 Demo::Chap2Demo4 => view_chap2_demo4(),
                 Demo::Chap3Demo1 => view_chap3_demo1(),
                 Demo::Chap3Demo2 => view_chap3_demo2(),
+                Demo::Chap3Demo3 => view_chap3_demo3(),
             },
         ],
     ]
@@ -233,6 +247,26 @@ fn view_chap3_demo2() -> Vec<Node<Msg>> {
             attrs! {
                 At::Width => 300,
                 At::Height => 150,
+            },
+        ],
+    ]
+}
+
+fn view_chap3_demo3() -> Vec<Node<Msg>> {
+    nodes![
+        div![
+            style! {
+                St::Height => "90vh",
+                St::Overflow => "scroll",
+            },
+            md!(format!("```js\n{}\n```", include_str!("./js/chap3_demo3.js")).as_str()),
+        ],
+        ul![
+            id!["chap3-demo3"],
+            style! {
+                St::BackgroundColor => "lightgrey",
+                St::Width => 300,
+                St::Height => 100,
             },
         ],
     ]

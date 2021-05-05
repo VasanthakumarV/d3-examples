@@ -29,3 +29,8 @@ extern "C" {
 extern "C" {
     pub fn chap3_demo2();
 }
+
+#[wasm_bindgen(module = "/src/js/chap3_demo3.js")]
+extern "C" {
+    pub fn chap3_demo3();
+}
