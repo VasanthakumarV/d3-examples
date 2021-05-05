@@ -108,10 +108,9 @@ fn view(model: &Model) -> Vec<Node<Msg>> {
         br![],
         div![
             style! {
-                St::Display => "grid",
-                St::GridTemplateColumns => "repeat(2, auto)",
-                St::Gap => "16px",
-                St::JustifyContent => "center",
+                St::Display => "flex",
+                St::FlexDirection => "column-reverse",
+                St::AlignItems => "center",
             },
             match model.demo {
                 Demo::Chap2Demo1 => view_chap2_demo1(),
@@ -129,6 +128,10 @@ fn view(model: &Model) -> Vec<Node<Msg>> {
 fn view_chap2_demo1() -> Vec<Node<Msg>> {
     nodes![
         div![
+            style! {
+                St::Height => "50vh",
+                St::Overflow => "scroll",
+            },
             md!(format!("```js\n{}\n```", include_str!("./js/chap2_demo1.js")).as_str()),
         ]
         svg![
@@ -148,7 +151,7 @@ fn view_chap2_demo2() -> Vec<Node<Msg>> {
     nodes![
         div![
             style! {
-                St::Height => "90vh",
+                St::Height => "50vh",
                 St::Overflow => "scroll",
             },
             md!(format!("```js\n{}\n```", include_str!("./js/chap2_demo2.js")).as_str()),
@@ -170,7 +173,7 @@ fn view_chap2_demo3() -> Vec<Node<Msg>> {
     nodes![
         div![
             style! {
-                St::Height => "90vh",
+                St::Height => "50vh",
                 St::Overflow => "scroll",
             },
             md!(format!("```js\n{}\n```", include_str!("./js/chap2_demo3.js")).as_str()),
@@ -192,7 +195,7 @@ fn view_chap2_demo4() -> Vec<Node<Msg>> {
     nodes![
         div![
             style! {
-                St::Height => "90vh",
+                St::Height => "50vh",
                 St::Overflow => "scroll",
             },
             md!(format!("```js\n{}\n```", include_str!("./js/chap2_demo4.js")).as_str()),
@@ -212,7 +215,7 @@ fn view_chap3_demo1() -> Vec<Node<Msg>> {
     nodes![
         div![
             style! {
-                St::Height => "90vh",
+                St::Height => "50vh",
                 St::Overflow => "scroll",
             },
             md!(format!("```js\n{}\n```", include_str!("./js/chap3_demo1.js")).as_str()),
@@ -234,7 +237,7 @@ fn view_chap3_demo2() -> Vec<Node<Msg>> {
     nodes![
         div![
             style! {
-                St::Height => "90vh",
+                St::Height => "50vh",
                 St::Overflow => "scroll",
             },
             md!(format!("```js\n{}\n```", include_str!("./js/chap3_demo2.js")).as_str()),
@@ -256,7 +259,7 @@ fn view_chap3_demo3() -> Vec<Node<Msg>> {
     nodes![
         div![
             style! {
-                St::Height => "90vh",
+                St::Height => "50vh",
                 St::Overflow => "scroll",
             },
             md!(format!("```js\n{}\n```", include_str!("./js/chap3_demo3.js")).as_str()),
