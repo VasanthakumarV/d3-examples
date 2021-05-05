@@ -1,4 +1,6 @@
 export function chap3_demo1() {
+  d3.selectAll("#chap3-demo1 > *").remove();
+
   var ds1 = [["Mary", 1], ["Jane", 4], ["Anne", 2]];
   var ds2 = [["Anne", 5], ["Jane", 3]];
 

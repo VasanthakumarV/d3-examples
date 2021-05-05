@@ -1,4 +1,6 @@
 export function chap2_demo3() {
+  d3.selectAll("#chap2-demo3 > *").remove();
+
   var data = d3.csvParse(`x,y1,y2
 1.0,0.001,0.63
 3.0,0.003,0.84
