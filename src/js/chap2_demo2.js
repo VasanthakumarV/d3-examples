@@ -4,7 +4,7 @@ export function chap2_demo2() {
   var width = container._groups[0][0].clientWidth;
   var height = container._groups[0][0].clientHeight
 
-  container.select("*").remove();
+  container.selectAll("*").remove();
   var svg = container
     .append("svg")
     .attr("width", width)
