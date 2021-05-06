@@ -1,5 +1,13 @@
 export function chap2_demo3() {
-  d3.selectAll("#chap2-demo3 > *").remove();
+  var container = d3.select("#chap2-demo3");
+
+  var pxX = container._groups[0][0].clientWidth;
+  var pxY = container._groups[0][0].clientHeight
+
+  container.select("svg").remove();
+  var svg = container.append("svg")
+    .attr("width", pxX)
+    .attr("height", pxY);
 
   var data = d3.csvParse(`x,y1,y2
 1.0,0.001,0.63
@@ -12,14 +20,8 @@ export function chap2_demo3() {
 8.0,0.198,0.71
 9.0,0.199,0.65`);
 
-  var svg = d3.select("#chap2-demo3");
-
-  // Extracting shape attributes
-  var pxX = svg.attr("width");
-  var pxY = svg.attr("height");
-
   // --- Scales x, y1 and y2 ---
-  
+
   var makeScale = function(accessor, range) {
     return d3.scaleLinear()
       .domain(d3.extent(data, accessor))

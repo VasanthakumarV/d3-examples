@@ -1,5 +1,14 @@
 export function chap2_demo2() {
-  d3.selectAll("#chap2-demo2 > *").remove();
+  var container = d3.select("#chap2-demo2");
+
+  var width = container._groups[0][0].clientWidth;
+  var height = container._groups[0][0].clientHeight
+
+  container.select("*").remove();
+  var svg = container
+    .append("svg")
+    .attr("width", width)
+    .attr("height", height);
 
   var data = d3.csvParse(`x,y1,y2
 1.0,0.001,0.63
@@ -27,8 +36,7 @@ export function chap2_demo2() {
     .domain(d3.extent(data, d => d["y2"]))
     .range([pxY, 0]);
 
-  d3.select("#chap2-demo2")
-    .append("g")
+  svg.append("g")
     .attr("id", "ds1")
     .attr("fill", "green")
     .selectAll("circle")
@@ -39,8 +47,7 @@ export function chap2_demo2() {
     .attr("cx", d => scX(d["x"]))
     .attr("cy", d => scY1(d["y1"]));
 
-  d3.select("#demo2")
-    .append("g")
+  svg.append("g")
     .attr("id", "ds2")
     .attr("fill", "blue")
     .selectAll("circle")

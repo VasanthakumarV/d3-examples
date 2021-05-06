@@ -1,5 +1,14 @@
 export function chap3_demo1() {
-  d3.selectAll("#chap3-demo1 > *").remove();
+  var container = d3.select("#chap3-demo1");
+
+  var width = container._groups[0][0].clientWidth;
+  var height = container._groups[0][0].clientHeight
+
+  container.select("svg").remove();
+  var svg = container
+    .append("svg")
+    .attr("width", width)
+    .attr("height", height);
 
   var ds1 = [["Mary", 1], ["Jane", 4], ["Anne", 2]];
   var ds2 = [["Anne", 5], ["Jane", 3]];
@@ -9,8 +18,6 @@ export function chap3_demo1() {
 
   var j = -1;
   var k = -1;
-
-  var svg = d3.select("#chap3-demo1");
 
   svg.selectAll("text")
     .data(ds1)

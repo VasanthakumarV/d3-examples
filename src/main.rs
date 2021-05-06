@@ -151,15 +151,13 @@ fn view(model: &Model) -> Vec<Node<Msg>> {
 
 fn view_chap2_demo1() -> Vec<Node<Msg>> {
     nodes![
-        svg![
+        div![
             id!["chap2-demo1"],
             style! {
                 St::BackgroundColor => "lightgrey",
                 St::Margin => "auto",
-            },
-            attrs! {
-                At::Width => 600,
-                At::Height => 300,
+                St::Width => 600,
+                St::Height => 300,
             },
         ],
         div![
@@ -173,15 +171,13 @@ fn view_chap2_demo1() -> Vec<Node<Msg>> {
 
 fn view_chap2_demo2() -> Vec<Node<Msg>> {
     nodes![
-        svg![
+        div![
             id!["chap2-demo2"],
             style! {
                 St::BackgroundColor => "lightgrey",
                 St::Margin => "auto",
-            },
-            attrs! {
-                At::Width => 600,
-                At::Height => 300,
+                St::Width => 600,
+                St::Height => 300,
             },
         ],
         div![
@@ -195,15 +191,13 @@ fn view_chap2_demo2() -> Vec<Node<Msg>> {
 
 fn view_chap2_demo3() -> Vec<Node<Msg>> {
     nodes![
-        svg![
+        div![
             id!["chap2-demo3"],
             style! {
                 St::BackgroundColor => "lightgrey",
                 St::Margin => "auto",
-            },
-            attrs! {
-                At::Width => 600,
-                At::Height => 300,
+                St::Width => 600,
+                St::Height => 300,
             },
         ],
         div![
@@ -217,12 +211,11 @@ fn view_chap2_demo3() -> Vec<Node<Msg>> {
 
 fn view_chap2_demo4() -> Vec<Node<Msg>> {
     nodes![
-        div![
+        ul![
             id!["chap2-demo4"],
             style! {
                 St::BackgroundColor => "lightgrey",
-                St::Width => 200,
-                St::Height => 200,
+                St::Width => 300,
                 St::Margin => "auto",
             },
         ],
@@ -237,15 +230,13 @@ fn view_chap2_demo4() -> Vec<Node<Msg>> {
 
 fn view_chap3_demo1() -> Vec<Node<Msg>> {
     nodes![
-        svg![
+        div![
             id!["chap3-demo1"],
             style! {
                 St::BackgroundColor => "lightgrey",
                 St::Margin => "auto",
-            },
-            attrs! {
-                At::Width => 300,
-                At::Height => 150,
+                St::Width => 300,
+                St::Height => 150,
             },
         ],
         div![
@@ -259,15 +250,13 @@ fn view_chap3_demo1() -> Vec<Node<Msg>> {
 
 fn view_chap3_demo2() -> Vec<Node<Msg>> {
     nodes![
-        svg![
+        div![
             id!["chap3-demo2"],
             style! {
                 St::BackgroundColor => "lightgrey",
                 St::Margin => "auto",
-            },
-            attrs! {
-                At::Width => 300,
-                At::Height => 150,
+                St::Width => 300,
+                St::Height => 150,
             },
         ],
         div![
@@ -301,15 +290,13 @@ fn view_chap3_demo3() -> Vec<Node<Msg>> {
 
 fn view_chap4_demo1() -> Vec<Node<Msg>> {
     nodes![
-        svg![
+        div![
             id!["chap4-demo1"],
             style! {
                 St::BackgroundColor => "lightgrey",
                 St::Margin => "auto",
-            },
-            attrs! {
-                At::Width => 300,
-                At::Height => 150,
+                St::Width => 300,
+                St::Height => 150,
             }
         ],
         div![
