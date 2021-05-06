@@ -19,6 +19,7 @@ export function chap2_demo3() {
   var pxY = svg.attr("height");
 
   // --- Scales x, y1 and y2 ---
+  
   var makeScale = function(accessor, range) {
     return d3.scaleLinear()
       .domain(d3.extent(data, accessor))
@@ -30,6 +31,7 @@ export function chap2_demo3() {
   var scY2 = makeScale(d => d["y2"], [pxY, 0]);
 
   // --- Shapes and curves geometry ---
+
   var drawData = function(g, accessor, curve) {
     g.selectAll("circle")
       .data(data)
@@ -56,6 +58,7 @@ export function chap2_demo3() {
   g2.call(drawData, d => scY2(d["y2"]), d3.curveNatural);
 
   // --- Shapes and curves appearance ---
+
   g1.selectAll("circle").attr("fill", "green");
   g1.selectAll("path").attr("stroke", "cyan");
 
@@ -63,6 +66,7 @@ export function chap2_demo3() {
   g2.selectAll("path").attr("stroke", "red");
 
   // --- Axes x, y1 and y2 ---
+
   svg.append("g")
     .call(d3.axisRight(scY1));
   svg.append("g")

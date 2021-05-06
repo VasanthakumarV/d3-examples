@@ -23,6 +23,7 @@ enum Demo {
     Chap3Demo1,
     Chap3Demo2,
     Chap3Demo3,
+    Chap4Demo1,
 }
 
 impl std::fmt::Display for Demo {
@@ -35,6 +36,7 @@ impl std::fmt::Display for Demo {
             Demo::Chap3Demo1 => write!(f, "Chapter 3, Demo 1"),
             Demo::Chap3Demo2 => write!(f, "Chapter 3, Demo 2"),
             Demo::Chap3Demo3 => write!(f, "Chapter 3, Demo 3"),
+            Demo::Chap4Demo1 => write!(f, "Chapter 4, Demo 1"),
         }
     }
 }
@@ -60,6 +62,7 @@ fn update(msg: Msg, model: &mut Model, orders: &mut impl Orders<Msg>) {
             Demo::Chap3Demo1 => bindings::chap3_demo1(),
             Demo::Chap3Demo2 => bindings::chap3_demo2(),
             Demo::Chap3Demo3 => bindings::chap3_demo3(),
+            Demo::Chap4Demo1 => bindings::chap4_demo1(),
         },
         Msg::Select(demo) => {
             orders.after_next_render(|_| Msg::Render);
@@ -76,33 +79,52 @@ fn view(model: &Model) -> Vec<Node<Msg>> {
                 St::Width => "50%",
                 St::Margin => "auto",
             },
-            option![
-                Demo::Chap2Demo1.to_string(),
-                ev(Ev::Click, |_| Msg::Select(Demo::Chap2Demo1))
+            optgroup![
+                attrs! {
+                    At::Label => "Let's make some graphs",
+                },
+                option![
+                    Demo::Chap2Demo1.to_string(),
+                    ev(Ev::Click, |_| Msg::Select(Demo::Chap2Demo1))
+                ],
+                option![
+                    Demo::Chap2Demo2.to_string(),
+                    ev(Ev::Click, |_| Msg::Select(Demo::Chap2Demo2))
+                ],
+                option![
+                    Demo::Chap2Demo3.to_string(),
+                    ev(Ev::Click, |_| Msg::Select(Demo::Chap2Demo3))
+                ],
+                option![
+                    Demo::Chap2Demo4.to_string(),
+                    ev(Ev::Click, |_| Msg::Select(Demo::Chap2Demo4))
+                ],
             ],
-            option![
-                Demo::Chap2Demo2.to_string(),
-                ev(Ev::Click, |_| Msg::Select(Demo::Chap2Demo2))
+            optgroup![
+                attrs! {
+                    At::Label => "Selecting and binding",
+                },
+                option![
+                    Demo::Chap3Demo1.to_string(),
+                    ev(Ev::Click, |_| Msg::Select(Demo::Chap3Demo1))
+                ],
+                option![
+                    Demo::Chap3Demo2.to_string(),
+                    ev(Ev::Click, |_| Msg::Select(Demo::Chap3Demo2))
+                ],
+                option![
+                    Demo::Chap3Demo3.to_string(),
+                    ev(Ev::Click, |_| Msg::Select(Demo::Chap3Demo3))
+                ],
             ],
-            option![
-                Demo::Chap2Demo3.to_string(),
-                ev(Ev::Click, |_| Msg::Select(Demo::Chap2Demo3))
-            ],
-            option![
-                Demo::Chap2Demo4.to_string(),
-                ev(Ev::Click, |_| Msg::Select(Demo::Chap2Demo4))
-            ],
-            option![
-                Demo::Chap3Demo1.to_string(),
-                ev(Ev::Click, |_| Msg::Select(Demo::Chap3Demo1))
-            ],
-            option![
-                Demo::Chap3Demo2.to_string(),
-                ev(Ev::Click, |_| Msg::Select(Demo::Chap3Demo2))
-            ],
-            option![
-                Demo::Chap3Demo3.to_string(),
-                ev(Ev::Click, |_| Msg::Select(Demo::Chap3Demo3))
+            optgroup![
+                attrs! {
+                    At::Label => "Events, interactivity and animation",
+                },
+                option![
+                    Demo::Chap4Demo1.to_string(),
+                    ev(Ev::Click, |_| Msg::Select(Demo::Chap4Demo1))
+                ],
             ],
         ],
         br![],
@@ -121,6 +143,7 @@ fn view(model: &Model) -> Vec<Node<Msg>> {
                 Demo::Chap3Demo1 => view_chap3_demo1(),
                 Demo::Chap3Demo2 => view_chap3_demo2(),
                 Demo::Chap3Demo3 => view_chap3_demo3(),
+                Demo::Chap4Demo1 => view_chap4_demo1(),
             },
         ],
     ]
@@ -272,6 +295,28 @@ fn view_chap3_demo3() -> Vec<Node<Msg>> {
                 St::Overflow => "scroll",
             },
             md!(format!("```js\n{}\n```", include_str!("./js/chap3_demo3.js")).as_str()),
+        ],
+    ]
+}
+
+fn view_chap4_demo1() -> Vec<Node<Msg>> {
+    nodes![
+        svg![
+            id!["chap4-demo1"],
+            style! {
+                St::BackgroundColor => "lightgrey",
+                St::Margin => "auto",
+            },
+            attrs! {
+                At::Width => 300,
+                At::Height => 150,
+            }
+        ],
+        div![
+            style! {
+                St::Overflow => "scroll",
+            },
+            md!(format!("```js\n{}\n```", include_str!("./js/chap4_demo1.js")).as_str()),
         ],
     ]
 }
