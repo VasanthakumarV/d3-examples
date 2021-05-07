@@ -1,56 +1,27 @@
 use wasm_bindgen::prelude::*;
 
-#[wasm_bindgen(module = "/src/js/chap2_demo1.js")]
-extern "C" {
-    pub fn chap2_demo1();
+macro_rules! generate_binding {
+    ($file:expr, $function:ident) => {
+        #[wasm_bindgen(module = $file)]
+        extern "C" {
+            pub fn $function();
+        }
+    };
 }
 
-#[wasm_bindgen(module = "/src/js/chap2_demo2.js")]
-extern "C" {
-    pub fn chap2_demo2();
-}
+// Chapter 2
+generate_binding!("/src/js/chap2_demo1.js", chap2_demo1);
+generate_binding!("/src/js/chap2_demo2.js", chap2_demo2);
+generate_binding!("/src/js/chap2_demo3.js", chap2_demo3);
+generate_binding!("/src/js/chap2_demo4.js", chap2_demo4);
 
-#[wasm_bindgen(module = "/src/js/chap2_demo3.js")]
-extern "C" {
-    pub fn chap2_demo3();
-}
+// Chapter 3
+generate_binding!("/src/js/chap3_demo1.js", chap3_demo1);
+generate_binding!("/src/js/chap3_demo2.js", chap3_demo2);
+generate_binding!("/src/js/chap3_demo3.js", chap3_demo3);
 
-#[wasm_bindgen(module = "/src/js/chap2_demo4.js")]
-extern "C" {
-    pub fn chap2_demo4();
-}
-
-#[wasm_bindgen(module = "/src/js/chap3_demo1.js")]
-extern "C" {
-    pub fn chap3_demo1();
-}
-
-#[wasm_bindgen(module = "/src/js/chap3_demo2.js")]
-extern "C" {
-    pub fn chap3_demo2();
-}
-
-#[wasm_bindgen(module = "/src/js/chap3_demo3.js")]
-extern "C" {
-    pub fn chap3_demo3();
-}
-
-#[wasm_bindgen(module = "/src/js/chap4_demo1.js")]
-extern "C" {
-    pub fn chap4_demo1();
-}
-
-#[wasm_bindgen(module = "/src/js/chap4_demo2.js")]
-extern "C" {
-    pub fn chap4_demo2();
-}
-
-#[wasm_bindgen(module = "/src/js/chap4_demo3.js")]
-extern "C" {
-    pub fn chap4_demo3();
-}
-
-#[wasm_bindgen(module = "/src/js/chap4_demo4.js")]
-extern "C" {
-    pub fn chap4_demo4();
-}
+// Chapter 4
+generate_binding!("/src/js/chap4_demo1.js", chap4_demo1);
+generate_binding!("/src/js/chap4_demo2.js", chap4_demo2);
+generate_binding!("/src/js/chap4_demo3.js", chap4_demo3);
+generate_binding!("/src/js/chap4_demo4.js", chap4_demo4);
