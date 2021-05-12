@@ -88,6 +88,11 @@ impl Model {
                 view: view_chap4_demo6,
                 view_id: "chap4-demo6".to_string(),
             },
+            Demo::Chap5Demo1 => Model {
+                render: bindings::chap5_demo1,
+                view: view_chap5_demo1,
+                view_id: "chap5-demo1".to_string(),
+            },
         }
     }
 }
@@ -107,6 +112,7 @@ enum Demo {
     Chap4Demo4,
     Chap4Demo5,
     Chap4Demo6,
+    Chap5Demo1,
 }
 
 impl std::fmt::Display for Demo {
@@ -125,6 +131,7 @@ impl std::fmt::Display for Demo {
             Demo::Chap4Demo4 => write!(f, "Chapter 4, Demo 4"),
             Demo::Chap4Demo5 => write!(f, "Chapter 4, Demo 5"),
             Demo::Chap4Demo6 => write!(f, "Chapter 4, Demo 6"),
+            Demo::Chap5Demo1 => write!(f, "Chapter 5, Demo 1"),
         }
     }
 }
@@ -232,6 +239,15 @@ fn view_dropdown() -> Node<Msg> {
             option![
                 Demo::Chap4Demo6.to_string(),
                 ev(Ev::Click, |_| Msg::Select(Demo::Chap4Demo6))
+            ],
+        ],
+        optgroup![
+            attrs! {
+                At::Label => "Generators, components, layouts",
+            },
+            option![
+                Demo::Chap5Demo1.to_string(),
+                ev(Ev::Click, |_| Msg::Select(Demo::Chap5Demo1))
             ],
         ],
     ]
@@ -481,7 +497,6 @@ fn view_chap4_demo6(model: &Model) -> Vec<Node<Msg>> {
         div![
             id![&model.view_id],
             style! {
-                //St::BackgroundColor => "lightgrey",
                 St::Margin => "auto",
                 St::Width => 300,
                 St::Height => 300,
@@ -492,6 +507,25 @@ fn view_chap4_demo6(model: &Model) -> Vec<Node<Msg>> {
                 St::Overflow => "scroll",
             },
             md!(format!("```js\n{}\n```", include_str!("./js/chap4_demo6.js")).as_str()),
+        ],
+    ]
+}
+fn view_chap5_demo1(model: &Model) -> Vec<Node<Msg>> {
+    nodes![
+        div![
+            id![&model.view_id],
+            style! {
+                St::BackgroundColor => "lightgrey",
+                St::Margin => "auto",
+                St::Width => 600,
+                St::Height => 150,
+            }
+        ],
+        div![
+            style! {
+                St::Overflow => "scroll",
+            },
+            md!(format!("```js\n{}\n```", include_str!("./js/chap5_demo1.js")).as_str()),
         ],
     ]
 }
