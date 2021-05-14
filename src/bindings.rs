@@ -31,3 +31,4 @@ generate_binding!("/src/js/chap4_demo6.js", chap4_demo6);
 // Chapter 5
 generate_binding!("/src/js/chap5_demo1.js", chap5_demo1);
 generate_binding!("/src/js/chap5_demo2.js", chap5_demo2);
+generate_binding!("/src/js/chap5_demo3.js", chap5_demo3);
