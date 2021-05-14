@@ -279,7 +279,7 @@ fn view_chap2_demo1(model: &Model) -> Vec<Node<Msg>> {
             style! {
                 St::Overflow => "scroll",
             },
-            md!(format!("```js\n{}\n```", include_str!("./js/chap2_demo1.js")).as_str()),
+            pre!(include_str!("./js/chap2_demo1.js")),
         ],
     ]
 }
@@ -299,7 +299,7 @@ fn view_chap2_demo2(model: &Model) -> Vec<Node<Msg>> {
             style! {
                 St::Overflow => "scroll",
             },
-            md!(format!("```js\n{}\n```", include_str!("./js/chap2_demo2.js")).as_str()),
+            pre!(include_str!("./js/chap2_demo2.js")),
         ],
     ]
 }
@@ -319,7 +319,7 @@ fn view_chap2_demo3(model: &Model) -> Vec<Node<Msg>> {
             style! {
                 St::Overflow => "scroll",
             },
-            md!(format!("```js\n{}\n```", include_str!("./js/chap2_demo3.js")).as_str()),
+            pre!(include_str!("./js/chap2_demo3.js")),
         ],
     ]
 }
@@ -338,7 +338,7 @@ fn view_chap2_demo4(model: &Model) -> Vec<Node<Msg>> {
             style! {
                 St::Overflow => "scroll",
             },
-            md!(format!("```js\n{}\n```", include_str!("./js/chap2_demo4.js")).as_str()),
+            pre!(include_str!("./js/chap2_demo4.js")),
         ],
     ]
 }
@@ -358,7 +358,7 @@ fn view_chap3_demo1(model: &Model) -> Vec<Node<Msg>> {
             style! {
                 St::Overflow => "scroll",
             },
-            md!(format!("```js\n{}\n```", include_str!("./js/chap3_demo1.js")).as_str()),
+            pre!(include_str!("./js/chap3_demo1.js")),
         ],
     ]
 }
@@ -378,7 +378,7 @@ fn view_chap3_demo2(model: &Model) -> Vec<Node<Msg>> {
             style! {
                 St::Overflow => "scroll",
             },
-            md!(format!("```js\n{}\n```", include_str!("./js/chap3_demo2.js")).as_str()),
+            pre!(include_str!("./js/chap3_demo2.js")),
         ],
     ]
 }
@@ -398,7 +398,7 @@ fn view_chap3_demo3(model: &Model) -> Vec<Node<Msg>> {
             style! {
                 St::Overflow => "scroll",
             },
-            md!(format!("```js\n{}\n```", include_str!("./js/chap3_demo3.js")).as_str()),
+            pre!(include_str!("./js/chap3_demo3.js")),
         ],
     ]
 }
@@ -418,7 +418,7 @@ fn view_chap4_demo1(model: &Model) -> Vec<Node<Msg>> {
             style! {
                 St::Overflow => "scroll",
             },
-            md!(format!("```js\n{}\n```", include_str!("./js/chap4_demo1.js")).as_str()),
+            pre!(include_str!("./js/chap4_demo1.js")),
         ],
     ]
 }
@@ -438,7 +438,7 @@ fn view_chap4_demo2(model: &Model) -> Vec<Node<Msg>> {
             style! {
                 St::Overflow => "scroll",
             },
-            md!(format!("```js\n{}\n```", include_str!("./js/chap4_demo2.js")).as_str()),
+            pre!(include_str!("./js/chap4_demo2.js")),
         ],
     ]
 }
@@ -458,7 +458,7 @@ fn view_chap4_demo3(model: &Model) -> Vec<Node<Msg>> {
             style! {
                 St::Overflow => "scroll",
             },
-            md!(format!("```js\n{}\n```", include_str!("./js/chap4_demo3.js")).as_str()),
+            pre!(include_str!("./js/chap4_demo3.js")),
         ],
     ]
 }
@@ -478,7 +478,7 @@ fn view_chap4_demo4(model: &Model) -> Vec<Node<Msg>> {
             style! {
                 St::Overflow => "scroll",
             },
-            md!(format!("```js\n{}\n```", include_str!("./js/chap4_demo4.js")).as_str()),
+            pre!(include_str!("./js/chap4_demo4.js")),
         ],
     ]
 }
@@ -498,7 +498,7 @@ fn view_chap4_demo5(model: &Model) -> Vec<Node<Msg>> {
             style! {
                 St::Overflow => "scroll",
             },
-            md!(format!("```js\n{}\n```", include_str!("./js/chap4_demo5.js")).as_str()),
+            pre!(include_str!("./js/chap4_demo5.js")),
         ],
     ]
 }
@@ -517,7 +517,7 @@ fn view_chap4_demo6(model: &Model) -> Vec<Node<Msg>> {
             style! {
                 St::Overflow => "scroll",
             },
-            md!(format!("```js\n{}\n```", include_str!("./js/chap4_demo6.js")).as_str()),
+            pre!(include_str!("./js/chap4_demo6.js")),
         ],
     ]
 }
@@ -537,7 +537,7 @@ fn view_chap5_demo1(model: &Model) -> Vec<Node<Msg>> {
             style! {
                 St::Overflow => "scroll",
             },
-            md!(format!("```js\n{}\n```", include_str!("./js/chap5_demo1.js")).as_str()),
+            pre!(include_str!("./js/chap5_demo1.js")),
         ],
     ]
 }
@@ -557,7 +557,7 @@ fn view_chap5_demo2(model: &Model) -> Vec<Node<Msg>> {
             style! {
                 St::Overflow => "scroll",
             },
-            md!(format!("```js\n{}\n```", include_str!("./js/chap5_demo2.js")).as_str()),
+            pre!(include_str!("./js/chap5_demo2.js")),
         ],
     ]
 }
