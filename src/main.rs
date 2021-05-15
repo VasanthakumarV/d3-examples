@@ -103,6 +103,11 @@ impl Model {
                 view: view_chap5_demo3,
                 view_id: "chap5-demo3".to_string(),
             },
+            Demo::Chap5Demo4 => Model {
+                render: bindings::chap5_demo4,
+                view: view_chap5_demo4,
+                view_id: "chap5-demo4".to_string(),
+            },
         }
     }
 }
@@ -125,6 +130,7 @@ enum Demo {
     Chap5Demo1,
     Chap5Demo2,
     Chap5Demo3,
+    Chap5Demo4,
 }
 
 impl std::fmt::Display for Demo {
@@ -146,6 +152,7 @@ impl std::fmt::Display for Demo {
             Demo::Chap5Demo1 => write!(f, "Chapter 5, Demo 1"),
             Demo::Chap5Demo2 => write!(f, "Chapter 5, Demo 2"),
             Demo::Chap5Demo3 => write!(f, "Chapter 5, Demo 3"),
+            Demo::Chap5Demo4 => write!(f, "Chapter 5, Demo 4"),
         }
     }
 }
@@ -270,6 +277,10 @@ fn view_dropdown() -> Node<Msg> {
             option![
                 Demo::Chap5Demo3.to_string(),
                 ev(Ev::Click, |_| Msg::Select(Demo::Chap5Demo3))
+            ],
+            option![
+                Demo::Chap5Demo4.to_string(),
+                ev(Ev::Click, |_| Msg::Select(Demo::Chap5Demo4))
             ],
         ],
     ]
@@ -589,6 +600,26 @@ fn view_chap5_demo3(model: &Model) -> Vec<Node<Msg>> {
                 St::Overflow => "scroll",
             },
             pre!(include_str!("./js/chap5_demo3.js")),
+        ],
+    ]
+}
+
+fn view_chap5_demo4(model: &Model) -> Vec<Node<Msg>> {
+    nodes![
+        div![
+            id![&model.view_id],
+            style! {
+                St::BackgroundColor => "lightgrey",
+                St::Margin => "auto",
+                St::Width => 600,
+                St::Height => 300,
+            }
+        ],
+        div![
+            style! {
+                St::Overflow => "scroll",
+            },
+            pre!(include_str!("./js/chap5_demo4.js")),
         ],
     ]
 }
