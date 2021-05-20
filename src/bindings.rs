@@ -38,3 +38,6 @@ generate_binding!("/src/js/chap5_demo4.js", chap5_demo4);
 generate_binding!("/src/js/chap7_demo1.js", chap7_demo1);
 generate_binding!("/src/js/chap7_demo2.js", chap7_demo2);
 generate_binding!("/src/js/chap7_demo3.js", chap7_demo3);
+
+// Chapter 8
+generate_binding!("/src/js/chap8_demo1.js", chap8_demo1);

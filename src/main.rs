@@ -123,6 +123,11 @@ impl Model {
                 view: view_chap7_demo3,
                 view_id: "chap7-demo3".to_string(),
             },
+            Demo::Chap8Demo1 => Model {
+                render: bindings::chap8_demo1,
+                view: view_chap8_demo1,
+                view_id: "chap8-demo1".to_string(),
+            },
         }
     }
 }
@@ -149,6 +154,7 @@ enum Demo {
     Chap7Demo1,
     Chap7Demo2,
     Chap7Demo3,
+    Chap8Demo1,
 }
 
 impl std::fmt::Display for Demo {
@@ -174,6 +180,7 @@ impl std::fmt::Display for Demo {
             Demo::Chap7Demo1 => write!(f, "Chapter 7, Demo 1"),
             Demo::Chap7Demo2 => write!(f, "Chapter 7, Demo 2"),
             Demo::Chap7Demo3 => write!(f, "Chapter 7, Demo 3"),
+            Demo::Chap8Demo1 => write!(f, "Chapter 8, Demo 1"),
         }
     }
 }
@@ -319,6 +326,15 @@ fn view_dropdown() -> Node<Msg> {
             option![
                 Demo::Chap7Demo3.to_string(),
                 ev(Ev::Click, |_| Msg::Select(Demo::Chap7Demo3))
+            ],
+        ],
+        optgroup![
+            attrs! {
+                At::Label => "Color scales"
+            },
+            option![
+                Demo::Chap8Demo1.to_string(),
+                ev(Ev::Click, |_| Msg::Select(Demo::Chap8Demo1))
             ],
         ],
     ]
@@ -718,6 +734,26 @@ fn view_chap7_demo3(model: &Model) -> Vec<Node<Msg>> {
                 St::Overflow => "scroll",
             },
             pre!(include_str!("./js/chap7_demo3.js")),
+        ],
+    ]
+}
+
+fn view_chap8_demo1(model: &Model) -> Vec<Node<Msg>> {
+    nodes![
+        div![
+            id![&model.view_id],
+            style! {
+                St::BackgroundColor => "lightgrey",
+                St::Margin => "auto",
+                St::Width => 400,
+                St::Height => 350,
+            }
+        ],
+        div![
+            style! {
+                St::Overflow => "scroll",
+            },
+            pre!(include_str!("./js/chap8_demo1.js")),
         ],
     ]
 }
