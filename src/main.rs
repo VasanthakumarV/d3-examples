@@ -158,6 +158,11 @@ impl Model {
                 view: view_chap9_demo4,
                 view_id: "chap9-demo4".to_string(),
             },
+            Demo::Chap10Demo1 => Model {
+                render: bindings::chap10_demo1,
+                view: view_chap10_demo1,
+                view_id: "chap10-demo1".to_string(),
+            },
         }
     }
 }
@@ -191,6 +196,7 @@ enum Demo {
     Chap9Demo2,
     Chap9Demo3,
     Chap9Demo4,
+    Chap10Demo1,
 }
 
 impl std::fmt::Display for Demo {
@@ -223,6 +229,7 @@ impl std::fmt::Display for Demo {
             Demo::Chap9Demo2 => write!(f, "Chapter 9, Demo 2"),
             Demo::Chap9Demo3 => write!(f, "Chapter 9, Demo 3"),
             Demo::Chap9Demo4 => write!(f, "Chapter 9, Demo 4"),
+            Demo::Chap10Demo1 => write!(f, "Chapter 10, Demo 1"),
         }
     }
 }
@@ -406,6 +413,15 @@ fn view_dropdown() -> Node<Msg> {
             option![
                 Demo::Chap9Demo4.to_string(),
                 ev(Ev::Click, |_| Msg::Select(Demo::Chap9Demo4))
+            ],
+        ],
+        optgroup![
+            attrs! {
+                At::Label => "Utilities: Arrays, statistics and timestamps"
+            },
+            option! [
+                Demo::Chap10Demo1.to_string(),
+                ev(Ev::Click, |_| Msg::Select(Demo::Chap10Demo1))
             ],
         ],
     ]
@@ -945,6 +961,26 @@ fn view_chap9_demo4(model: &Model) -> Vec<Node<Msg>> {
                 St::Overflow => "scroll",
             },
             pre!(include_str!("./js/chap9_demo4.js")),
+        ],
+    ]
+}
+
+fn view_chap10_demo1(model: &Model) -> Vec<Node<Msg>> {
+    nodes![
+        div![
+            id![&model.view_id],
+            style! {
+                St::BackgroundColor => "lightgrey",
+                St::Margin => "auto",
+                St::Width => 600,
+                St::Height => 300,
+            }
+        ],
+        div![
+            style! {
+                St::Overflow => "scroll",
+            },
+            pre!(include_str!("./js/chap10_demo1.js")),
         ],
     ]
 }

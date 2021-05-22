@@ -49,3 +49,6 @@ generate_binding!("/src/js/chap9_demo1.js", chap9_demo1);
 generate_binding!("/src/js/chap9_demo2.js", chap9_demo2);
 generate_binding!("/src/js/chap9_demo3.js", chap9_demo3);
 generate_binding!("/src/js/chap9_demo4.js", chap9_demo4);
+
+// Chapter 10
+generate_binding!("/src/js/chap10_demo1.js", chap10_demo1);
