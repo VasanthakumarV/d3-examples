@@ -9,6 +9,7 @@ export function chap9_demo2() {
     .append("svg")
     .attr("width", width)
     .attr("height", height);
+
   var data = `
   {
     "name": "root", "size": 0, "kids": [
