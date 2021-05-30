@@ -1,5 +1,5 @@
 [package]
-name = "seed-d3"
+name = "d3-examples"
 version = "0.1.0"
 authors = ["VasanthakumarV <vasanth260m12@gmail.com>"]
 edition = "2018"

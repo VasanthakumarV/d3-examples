@@ -66,6 +66,14 @@ dependencies = [
 ]
 
 [[package]]
+name = "d3-examples"
+version = "0.1.0"
+dependencies = [
+ "seed",
+ "wasm-bindgen",
+]
+
+[[package]]
 name = "dbg"
 version = "1.0.4"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -463,14 +471,6 @@ dependencies = [
  "wasm-bindgen",
  "wasm-bindgen-futures",
  "web-sys",
-]
-
-[[package]]
-name = "seed-d3"
-version = "0.1.0"
-dependencies = [
- "seed",
- "wasm-bindgen",
 ]
 
 [[package]]
